@@ -17,7 +17,7 @@ class HomePageTest(TestCase):
         self.assertIn('A new list item', response.content.decode())
         self.assertTemplateUsed(response, 'home.html')
         
-class ItemModelTest(TestCase)
+class ItemModelTest(TestCase):
     def test_saving_and_retrieving_items(self):
         first_item = Item()
         first_item.text = 'The first (ever) list item'
