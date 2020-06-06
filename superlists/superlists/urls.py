@@ -18,5 +18,5 @@ from lists import views
 from django.conf.urls import url
 
 urlpatterns = [
-    path(r'^$', views.home_page, name='home'),
+    url(r'^$', views.home_page, name='home'),
 ]
