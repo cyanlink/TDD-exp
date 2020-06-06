@@ -1,10 +1,9 @@
 from selenium import webdriver
+from django.test import LiveServerTestCase
 from selenium.webdriver.common.keys import Keys
 import time
-import unittest
 
-
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -19,7 +18,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_start_a_list_and_retrieve_it_later(self):
         # user goes to our todo list site
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
         # user noticed the page title
         self.assertIn('To-Do', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
@@ -54,7 +53,3 @@ class NewVisitorTest(unittest.TestCase):
         # generated unique URL permalink for the list
 
         # user revisit the permalink and see the same todo list again
-
-
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
