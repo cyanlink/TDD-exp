@@ -27,7 +27,7 @@ class NewVisitorTest(LiveServerTestCase):
                     raise e
                 time.sleep(0.5)
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
+    def test_can_start_a_list_for_one_user(self):
         # user goes to our todo list site
         self.browser.get(self.live_server_url)
         # user noticed the page title
@@ -56,18 +56,8 @@ class NewVisitorTest(LiveServerTestCase):
         # page update again
         self.wait_for_row_in_list_table('1: Buy peacock feathers')
         self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
-
-        self.fail('Finish the Test!')
-
         # generated unique URL permalink for the list
-
         # user revisit the permalink and see the same todo list again
-    
-    def test_can_start_a_list_for_one_user(self):
-        #the page updates again and show both items on Edith's list
-        self.wait_for_row_in_list_table('1: Buy peacock feathers')
-        self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
-        # user goes to sleep
 
     def test_multiple_users_can_start_lists_at_different_urls(self):
         # Edith starts new todo list
