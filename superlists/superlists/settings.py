@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o+7*i+o(5cm&+&*eh&dg=z3d(j0(vl5xugq8vtyv0zf&5vp#j)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tdd.tinker.link']
 
 
 # Application definition
